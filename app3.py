@@ -26,11 +26,13 @@ try:
         driver.quit()
         exit()
 
+
+
     # Open the website
     driver.get(url)
 
     # Click on  login
-    WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.CLASS_NAME, "login-link")))
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME, "login-link")))
     login_button = driver.find_element(By.CLASS_NAME, "login-link") 
     login_button.click()
 
@@ -46,42 +48,45 @@ try:
     password_input.send_keys(Keys.ENTER)
     time.sleep(10)
 
+
+
     # Navigate to the article posting page
     driver.get("https://atg.party/article")
 
-    # # Click on create
-    # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "create-btn-dropdown")))
-    # create_button = driver.find_element(By.ID, "create-btn-dropdown") 
-    # create_button.click()
-    # # Click on article
-    # WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.ID, "create-btn-dropdown")))
-    # article_button = driver.find_element(By.ID, "create-btn-dropdown") 
-    # article_button.click()
-
     # # Fill in the title and description
-    WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.ID, "title")))
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "title")))
     title_input = driver.find_element(By.ID, "title")
     title_input.send_keys("Test Article Title")
 
     description_input = driver.find_element(By.CLASS_NAME, "ce-paragraph")
     description_input.click()
     description_input.send_keys("This is a test article description.")
+    description_input.click()
+    time.sleep(5)
+
+    # add image
+    plus_sign = driver.find_element(By.CLASS_NAME, "ce-toolbar__plus")
+    plus_sign.click()
+    time.sleep(5)
+    description_input = driver.find_element(By.XPATH, "//div[@class='ce-popover-item__title' and text()='Image']")
+    description_input.click()
+    time.sleep(5)
+    # # Type "profile-pic (9)compressed"
+    import pyautogui
+    pyautogui.typewrite(r"C:\Users\LENOVO\Pictures\profile pics\me")
+    time.sleep(5)
+    pyautogui.press('enter')
     time.sleep(10)
 
-    # # Upload a cover image
-    # image_upload = driver.find_element(By.NAME, "cover_image")
-    # image_upload.send_keys("C:/Users/LENOVO/Pictures/profile pics/profile-pic (9)compressed.jpg")
+    # post
+    post_button = driver.find_element(By.ID, "hpost_btn")
+    post_button.click()
+    time.sleep(10)
 
-    # # Click on POST
-    # post_button = driver.find_element(By.XPATH, "//button[contains(text(), 'POST')]")ce-toolbar__plus
-    # post_button.click()
-
-    # # Log the URL of the new page after posting
-    # WebDriverWait(driver, 10).until(
-    #     EC.url_changes("https://atg.party/article")
-    # )
-    # new_page_url = driver.current_url
-    # print(f"New article posted at: {new_page_url}")
+    new_page_url = driver.current_url
+    print(f"New article posted at: {new_page_url}")
 
 finally:
     driver.quit()
+
+
