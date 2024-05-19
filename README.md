@@ -1,36 +1,11 @@
-# Fraud-Detection-for-Accenture-Classification
+# Banao-Python-Automation
 
 [![View Repositories](https://img.shields.io/badge/View-My_Repositories-blue?logo=GitHub)](https://github.com/ikoghoemmanuell?tab=repositories)
 [![View My Profile](https://img.shields.io/badge/MEDIUM-Article-purple?logo=Medium)](https://medium.com/@emmanuel.ikogho/classification-predicting-sepsis-with-machine-learning-and-fastapi-3a3d05d0b5b4)
 [![Website](https://img.shields.io/badge/My-Website-darkgreen)](https://emmanuelikogho.netlify.app/)
 
-![alt text](image.png)
-
 ## Introduction (What is Fraud?)
 
-Fraud is much more common than you think and can happen to any business. Spotting and stopping fraud early can prevent losses, reputational damage, and might even save your business from collapse.
-
-Put simply, fraud is stealing by deception. If someone lies to you in order to steal money, property, or data, they may have committed fraud.
-
-In this project, we will develop a model for predicting fraudulent transactions for a financial company and then use insights from the model to develop a plan of action.
-
-# Dataset Description -
-
-The data for this project is in a csv format. The following describes the columns present in the data.
-
-| Column Name    | Target | Description                                                                                                                                                                                                              |
-| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| step           | N/A    | Maps a unit of time in the real world. In this case, 1 step is 1 hour of time. Total steps 744 (30 days simulation).                                                                                                     |
-| type           | False  | Type of transaction: CASH-IN, CASH-OUT, DEBIT, PAYMENT, and TRANSFER.                                                                                                                                                    |
-| amount         | False  | Amount of the transaction in local currency.                                                                                                                                                                             |
-| nameOrig       | False  | Customer who started the transaction.                                                                                                                                                                                    |
-| oldbalanceOrg  | False  | Initial balance before the transaction.                                                                                                                                                                                  |
-| newbalanceOrig | False  | New balance after the transaction.                                                                                                                                                                                       |
-| nameDest       | False  | Customer who is the recipient of the transaction.                                                                                                                                                                        |
-| oldbalanceDest | False  | Initial balance of the recipient before the transaction. Note that there is no information for customers that start with M (Merchants).                                                                                  |
-| newbalanceDest | False  | New balance of the recipient after the transaction. Note that there is no information for customers that start with M (Merchants).                                                                                       |
-| isFraud        | True   | Indicates if the transaction is fraudulent. Fraudulent transactions aim to profit by taking control of customers' accounts and emptying the funds by transferring to another account and then cashing out of the system. |
-| isFlaggedFraud | False  | Indicates if the transaction was flagged as suspicious for transferring more than 200,000 in a single transaction.                                                                                                       |
 
 ## Setup
 
