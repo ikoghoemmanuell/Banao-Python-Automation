@@ -30,23 +30,19 @@ try:
     driver.get(url)
 
     # # Click on LOGIN
-    # login_button = WebDriverWait(driver, 10).until(
-    #     EC.presence_of_element_located((By.LINK_TEXT, "Login"))
-    # )
-    # login_button.click()
+    login_button = driver.find_element(By.CLASS_NAME, "login-link") # WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.LINK_TEXT, "Login")))
+    login_button.click()
 
     # # Enter email and password
-    # email_input = WebDriverWait(driver, 10).until(
-    #     EC.presence_of_element_located((By.NAME, "Email Address"))
-    # )
-    # password_input = driver.find_element(By.NAME, "Password")
+    email_input = driver.find_element(By.ID, "email_landing")# WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "Email Address")))
+    password_input = driver.find_element(By.ID, "password_landing")# password_input = driver.find_element(By.NAME, "Password")
     
-    
-    # email_input.send_keys("wiz_saurabh@rediffmail.com")
-    # password_input.send_keys("Pass@123")
+    email_input.send_keys("wiz_saurabh@rediffmail.com")
+    password_input.send_keys("Pass@123")
     
     # # Submit the login form
-    # password_input.send_keys(Keys.RETURN)
+    password_input.send_keys(Keys.ENTER)
+    time.sleep(10)
 
     # # Navigate to the article posting page
     # driver.get("https://atg.party/article")
