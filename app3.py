@@ -30,12 +30,12 @@ try:
     driver.get(url)
 
     # Click on  login
-    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME, "login-link")))
+    WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.CLASS_NAME, "login-link")))
     login_button = driver.find_element(By.CLASS_NAME, "login-link") 
     login_button.click()
 
     # Enter email and password
-    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "email_landing"))) 
+    WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.ID, "email_landing"))) 
     email_input = driver.find_element(By.ID, "email_landing")
     password_input = driver.find_element(By.ID, "password_landing")
     
@@ -44,24 +44,36 @@ try:
     
     # # Submit the login form
     password_input.send_keys(Keys.ENTER)
+    time.sleep(10)
 
     # Navigate to the article posting page
     driver.get("https://atg.party/article")
-    time.sleep(10)
+
+    # # Click on create
+    # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "create-btn-dropdown")))
+    # create_button = driver.find_element(By.ID, "create-btn-dropdown") 
+    # create_button.click()
+    # # Click on article
+    # WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.ID, "create-btn-dropdown")))
+    # article_button = driver.find_element(By.ID, "create-btn-dropdown") 
+    # article_button.click()
 
     # # Fill in the title and description
-    # title_input =  WebDriverWait(driver, 5).until(EC.presence_of_element_located(()))
-    # description_input = driver.find_element(By.NAME, "description")
+    WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.ID, "title")))
+    title_input = driver.find_element(By.ID, "title")
+    title_input.send_keys("Test Article Title")
 
-    # title_input.send_keys("Test Article Title")
-    # description_input.send_keys("This is a test article description.")
+    description_input = driver.find_element(By.CLASS_NAME, "ce-paragraph")
+    description_input.click()
+    description_input.send_keys("This is a test article description.")
+    time.sleep(10)
 
     # # Upload a cover image
     # image_upload = driver.find_element(By.NAME, "cover_image")
     # image_upload.send_keys("C:/Users/LENOVO/Pictures/profile pics/profile-pic (9)compressed.jpg")
 
     # # Click on POST
-    # post_button = driver.find_element(By.XPATH, "//button[contains(text(), 'POST')]")
+    # post_button = driver.find_element(By.XPATH, "//button[contains(text(), 'POST')]")ce-toolbar__plus
     # post_button.click()
 
     # # Log the URL of the new page after posting
