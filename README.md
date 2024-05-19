@@ -4,7 +4,17 @@
 [![View My Profile](https://img.shields.io/badge/MEDIUM-Article-purple?logo=Medium)](https://medium.com/@emmanuel.ikogho/classification-predicting-sepsis-with-machine-learning-and-fastapi-3a3d05d0b5b4)
 [![Website](https://img.shields.io/badge/My-Website-darkgreen)](https://emmanuelikogho.netlify.app/)
 
-## Introduction (What is Fraud?)
+## Introduction
+Task:
+Following test needs to be done using python selenium:: 
+Open website atg.party. Please check the following conditions:
+HTTP response code == 200
+Response time of page load should be logged
+Click on LOGIN . use the following email/password : wiz_saurabh@rediffmail.com / Pass@123
+Go to the URL : atg.party/article. Fill in the title and description. Upload a cover image. Click on POST. Page will redirect to a new page as the article gets posted. Log the URL of the new page.
+ 
+Logs from the run should get stored on both console and a text file locally.
+
 
 
 ## Setup
